@@ -42,7 +42,9 @@ public class HomePageSD {
 
     @Then("Sign in window pops up")
     public void signInWindowPopsUp() {
+
         driver.findElement(By.xpath("//*[@id=\"btnFree\"]")).isEnabled();
+        driver.quit();
     }
 
 
@@ -60,6 +62,7 @@ public class HomePageSD {
         String expectedUrl = "https://ispeakbetter.com/courses";
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
+        driver.quit();
     }
 
     //Scenario 3
@@ -77,6 +80,7 @@ public class HomePageSD {
         Thread.sleep(3000);
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
+        driver.quit();
     }
 
     //Scenario 4
@@ -99,6 +103,7 @@ public class HomePageSD {
         String expectedText = "30";
         String actualText = driver.findElement(By.xpath("//*[@id=\"select2-class_duration-container\"]")).getText();
         Assert.assertEquals(expectedText, actualText);
+        driver.quit();
     }
 
     //Scenario 5
@@ -121,6 +126,7 @@ public class HomePageSD {
         String expectedText = "Business English";
         String actualText = driver.findElement(By.xpath("//span[@id='select2-course_program-container']")).getText();
         Assert.assertEquals(expectedText, actualText);
+        driver.quit();
     }
 }
 

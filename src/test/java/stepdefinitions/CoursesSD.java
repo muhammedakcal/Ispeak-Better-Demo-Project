@@ -8,7 +8,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.CoursesPage;
-
 import static base.BasePage.driver;
 
 public class CoursesSD {
@@ -25,7 +24,7 @@ public class CoursesSD {
       String Url= "https://ispeakbetter.com/courses";
       String actualUrl=driver.getCurrentUrl();
       Assert.assertEquals(Url, actualUrl);
-      CoursesPage.quit();
+      driver.quit();
    }
    @And("User clicks to first Enrolment Links")
    public void clickToFirstEnrolmentBtn(){
@@ -51,6 +50,7 @@ public class CoursesSD {
    public void verifyLink(){
       boolean verification=CoursesPage.isEnrolmentPageOpened();
       Assert.assertTrue(verification);
-      CoursesPage.quit();
+      driver.quit();
+
    }
 }
