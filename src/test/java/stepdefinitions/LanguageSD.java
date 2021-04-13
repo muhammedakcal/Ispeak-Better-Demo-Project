@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import base.BasePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,6 +11,7 @@ public class LanguageSD {
 
     @Given("User on the About pageL")
     public void gotoAboutPage(){
+        BasePage.initializeDriver();
         AboutPage.goAboutPage();
         AboutPage.clickLang();
 
@@ -30,6 +32,7 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheEnglishButton() {
         String expectedText="About us";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
 
     }
 
@@ -44,6 +47,7 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheTurkishButton() {
         String expectedText="Hakkımızda";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
     }
 
     @When("User clicks to Mongolian page")
@@ -57,6 +61,7 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheMongolianButton() {
         String expectedText="Бидний тухай";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
     }
 
     @When("User clicks to Chinese page")
@@ -70,6 +75,7 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheChineseButton() {
         String expectedText="關於我們";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
     }
 
     @When("User clicks to Russian page")
@@ -83,6 +89,7 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheRussianButton() {
         String expectedText="O нас";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
     }
 
     @When("User clicks to Arabic page")
@@ -96,5 +103,6 @@ public class LanguageSD {
     public void verifyThatYouSwitchToTheArabicButton() {
         String expectedText="About us";
         Assert.assertEquals(expectedText,AboutPage.EnGetText());
+        BasePage.tearDown();
     }
 }

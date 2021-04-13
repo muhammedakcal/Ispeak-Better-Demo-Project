@@ -1,12 +1,14 @@
 package utils;
 
+import base.BasePage;
+import base.PageManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import static base.BasePage.driver;
 
-public class HelperMethods {
+public class HelperMethods  {
 
     public static void doClick(WebElement element) {
         try {

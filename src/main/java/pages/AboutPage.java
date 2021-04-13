@@ -1,6 +1,7 @@
 package pages;
 import static base.BasePage.driver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,9 +13,8 @@ public class AboutPage {
 
 
     @FindBy(xpath ="//*[@id=\"mobile-navbar-collapse\"]/ul/li[3]/a/span")
+
     public static WebElement aboutPagelink;
-
-
 
 
     @FindBy(id = "dropdownMenuLink")
@@ -53,6 +53,7 @@ public class AboutPage {
 
     public static void goAboutPage (){
         HelperMethods.doClick(aboutPagelink);
+
     }
 
 
