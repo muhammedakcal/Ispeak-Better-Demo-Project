@@ -37,7 +37,7 @@ public class BasePage {
         }
         PageManager.initialize();
         driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+//        driver.manage().window().maximize();
         driver.get(ConfigReader.getProperty("url"));
 
 

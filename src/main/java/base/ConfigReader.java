@@ -16,7 +16,7 @@ public class ConfigReader {
             properties.load(file);
             file.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("an exception occured in configreader class");
         }
 
     }

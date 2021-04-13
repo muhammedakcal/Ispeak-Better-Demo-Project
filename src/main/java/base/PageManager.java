@@ -1,19 +1,13 @@
 package base;
 
-import pages.AboutPage;
+import pages.CoursesPage;
 
 public class PageManager {
 
-    public static AboutPage aboutPage;
-
-
-
-
-
+    public static CoursesPage coursespage;
 
     public static void initialize() {
-
-        aboutPage = new AboutPage();
+        coursespage = new CoursesPage();
 
     }
 
