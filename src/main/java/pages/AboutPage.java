@@ -11,30 +11,9 @@ public class AboutPage {
 
 
 
-    @FindBy(xpath = "//*[@id=\"page\"]/section[2]/div/div/div[2]/p/strong/a")
-    public static WebElement youtubeLink;
-
     @FindBy(xpath ="//*[@id=\"mobile-navbar-collapse\"]/ul/li[3]/a/span")
     public static WebElement aboutPagelink;
 
-
-    @FindBy(linkText ="Terms & Conditions")
-    public static WebElement term_conditions;
-
-
-    @FindBy(linkText ="Privacy Policy")
-    public static WebElement PrivacyPolicy ;
-
-
-    @FindBy(linkText ="FAQ")
-    public static WebElement FAQ ;
-
-
-    @FindBy(linkText ="Contact Us")
-    public static WebElement ContactUs;
-
-    @FindBy(linkText ="Partners")
-    public static WebElement Partners;
 
 
 
@@ -66,15 +45,6 @@ public class AboutPage {
 
 
 
-
-
-
-
-
-
-
-
-
     public AboutPage(){
                 PageFactory.initElements(driver,this);
             }
@@ -85,42 +55,10 @@ public class AboutPage {
                 HelperMethods.doClick(aboutPagelink);
             }
 
-            public static void clickYoutubeLink(){
-                HelperMethods.doClick(youtubeLink);
-            }
-
-            public static boolean youtubeLinkSsDisplayed(){
-             return    HelperMethods.doIsDisplayed(youtubeLink);
-            }
-
-            public static boolean termsConLinkIsDis(){
-                return HelperMethods.doIsDisplayed(term_conditions);
-
-            }
-            public static void clicktermsConLink(){
-
-                HelperMethods.doClick(term_conditions);
-            }
-             public static void clickPrivPolLink(){
-
-              HelperMethods.doClick(PrivacyPolicy);
-             }
-             public static void clickFAQLink(){
-
-             HelperMethods.doClick(FAQ);
-             }
-            public static void clickContactUsLink(){
-
-             HelperMethods.doClick(ContactUs);
-             }
-            public static void clickPartnersLink(){
-
-             HelperMethods.doClick(Partners);
-            }
 
 
             public static String getUrl(){
-             return HelperMethods.getCurrentURL();
+             return driver.getCurrentUrl();
             }
 
             public static void clickLang(){
@@ -147,6 +85,9 @@ public class AboutPage {
             }
             public static String EnGetText(){
         return HelperMethods.doGetText(getAbout);
+
+
+
             }
 
 
