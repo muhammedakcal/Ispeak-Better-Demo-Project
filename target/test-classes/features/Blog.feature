@@ -1,4 +1,3 @@
-@blocks
 Feature:
   Scenario:Opening the blog by clicking picture
     Given User will be on home page

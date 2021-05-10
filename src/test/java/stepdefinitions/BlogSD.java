@@ -86,11 +86,11 @@ public class BlogSD {
 
     }
 
-    @And("User will click the source link")
-    public void userWillClickTheSourceLink() {
-        driver.findElement(By.xpath("//a[normalize-space()='https://www.ielts.org/ielts/destinations']")).click();
-
-    }
+//    @And("User will click the source link")
+//    public void userWillClickTheSourceLink() {
+//        driver.findElement(By.xpath("//a[normalize-space()='https://www.ielts.org/ielts/destinations']")).click();
+//
+//    }
 
     @Then("User will see the IELTS destination page")
     public void userWillSeeTheIELTSDestinationPage() {

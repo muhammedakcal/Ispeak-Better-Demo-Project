@@ -18,12 +18,12 @@ Feature:
     And User will click to headline title
     Then User will see the blog
 
-  Scenario:Opening source link in the blog
-    Given User will be on home page
-    When User will click on blog section
-    And User will open the blog
-    And User will click the source link
-    Then User will see the IELTS destination page
+#  Scenario:Opening source link in the blog
+#    Given User will be on home page
+#    When User will click on blog section
+#    And User will open the blog
+#    And User will click the source link
+#    Then User will see the IELTS destination page
 
 
   Scenario:Opening writings with the tag Online learning

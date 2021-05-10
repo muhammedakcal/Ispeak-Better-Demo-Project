@@ -1,0 +1,5 @@
+stepdefinitions\LanguageSD.class
+stepdefinitions\HomePageSD.class
+runnertest\TestRunner.class
+stepdefinitions\CoursesSD.class
+stepdefinitions\BlogSD.class

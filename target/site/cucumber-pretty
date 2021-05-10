@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.281-b09"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1620280196","nanos":419000000}}},{"source":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","data":"Feature:\r\n  Scenario:Opening the blog by clicking picture\r\n    Given User will be on home page\r\n    When User will click on blog section\r\n    And User will click to picture\r\n    Then User will see the correct blog\r\n\r\n  Scenario:Opening page 2 of blogs posted in English Article\r\n    Given User will be on home page\r\n    When User will click on blog section\r\n    And User will click to English Article\r\n    And User will click to second page\r\n    Then User will see the list of English Articles\r\n\r\n  Scenario:Opening blog by clicking headline title\r\n    Given User will be on home page\r\n    When User will click on blog section\r\n    And User will click to headline title\r\n    Then User will see the blog\r\n\r\n  Scenario:Opening source link in the blog\r\n    Given User will be on home page\r\n    When User will click on blog section\r\n    And User will open the blog\r\n    And User will click the source link\r\n    Then User will see the IELTS destination page\r\n\r\n\r\n  Scenario:Opening writings with the tag Online learning\r\n    Given User will be on home page\r\n    When User will click on blog section\r\n    And User will click to English Article\r\n    And User will click to Online learning tag\r\n    Then User will see the list of Articles with the Online learning tag\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","children":[{"scenario":{"location":{"line":2,"column":3},"keyword":"Scenario","name":"Opening the blog by clicking picture","steps":[{"location":{"line":3,"column":5},"keyword":"Given ","text":"User will be on home page","id":"6b15902f-666d-4f4e-a934-23545262fdca"},{"location":{"line":4,"column":5},"keyword":"When ","text":"User will click on blog section","id":"6daf3321-2f6c-47d5-a5e8-e649b70713bb"},{"location":{"line":5,"column":5},"keyword":"And ","text":"User will click to picture","id":"9fd68f1a-a8cc-4bd6-8141-78567808826a"},{"location":{"line":6,"column":5},"keyword":"Then ","text":"User will see the correct blog","id":"11aebc5d-7497-4bce-96fd-53368a808ef3"}],"id":"7f000b42-fba1-45eb-a7e3-e487b2188ba8"}},{"scenario":{"location":{"line":8,"column":3},"keyword":"Scenario","name":"Opening page 2 of blogs posted in English Article","steps":[{"location":{"line":9,"column":5},"keyword":"Given ","text":"User will be on home page","id":"ed07e234-3a88-438c-a72a-f45648332970"},{"location":{"line":10,"column":5},"keyword":"When ","text":"User will click on blog section","id":"7dcce66b-a3cc-4606-892a-681cf4c78d55"},{"location":{"line":11,"column":5},"keyword":"And ","text":"User will click to English Article","id":"5cf97ded-f952-4bde-9006-2e34d1cdeb97"},{"location":{"line":12,"column":5},"keyword":"And ","text":"User will click to second page","id":"5f7bc60d-3440-4b22-bbbf-6fca55f29902"},{"location":{"line":13,"column":5},"keyword":"Then ","text":"User will see the list of English Articles","id":"127f1734-77f5-42bf-a9cf-041a1456a7f4"}],"id":"cf8a16bd-1696-4f32-a192-920c070602fc"}},{"scenario":{"location":{"line":15,"column":3},"keyword":"Scenario","name":"Opening blog by clicking headline title","steps":[{"location":{"line":16,"column":5},"keyword":"Given ","text":"User will be on home page","id":"8cec0a3f-48e9-4877-b995-0e023a5f5b2f"},{"location":{"line":17,"column":5},"keyword":"When ","text":"User will click on blog section","id":"847a3260-c4c6-4652-a3f7-80167320f7e7"},{"location":{"line":18,"column":5},"keyword":"And ","text":"User will click to headline title","id":"34587724-ab0d-4f14-9a1d-bb556fd0fa00"},{"location":{"line":19,"column":5},"keyword":"Then ","text":"User will see the blog","id":"44bbc0fe-441d-4eec-90eb-43ffa5546c46"}],"id":"34954288-3d39-4248-b59c-f12ca4182265"}},{"scenario":{"location":{"line":21,"column":3},"keyword":"Scenario","name":"Opening source link in the blog","steps":[{"location":{"line":22,"column":5},"keyword":"Given ","text":"User will be on home page","id":"a547d9d9-e796-4227-8efd-b21a08566f26"},{"location":{"line":23,"column":5},"keyword":"When ","text":"User will click on blog section","id":"b6106056-05a6-4e5d-a749-d9fc84178c01"},{"location":{"line":24,"column":5},"keyword":"And ","text":"User will open the blog","id":"8115f652-b501-46a0-8d03-0565e379ee1e"},{"location":{"line":25,"column":5},"keyword":"And ","text":"User will click the source link","id":"40885f23-a26c-4159-aa91-0ef4003cefd9"},{"location":{"line":26,"column":5},"keyword":"Then ","text":"User will see the IELTS destination page","id":"878b4435-b911-4656-ac16-cb8d59fc1154"}],"id":"ddc59bb9-209f-42f0-bc39-7955a4c56075"}},{"scenario":{"location":{"line":29,"column":3},"keyword":"Scenario","name":"Opening writings with the tag Online learning","steps":[{"location":{"line":30,"column":5},"keyword":"Given ","text":"User will be on home page","id":"c83bac1d-2833-4f58-96b1-e1b266ba3cd5"},{"location":{"line":31,"column":5},"keyword":"When ","text":"User will click on blog section","id":"160675ac-8132-46cb-acda-7df2aeea32c7"},{"location":{"line":32,"column":5},"keyword":"And ","text":"User will click to English Article","id":"2f03ff3f-9800-445a-975c-780bc3f6cc5e"},{"location":{"line":33,"column":5},"keyword":"And ","text":"User will click to Online learning tag","id":"d6e535a1-6c01-4aae-9385-5ed24e860706"},{"location":{"line":34,"column":5},"keyword":"Then ","text":"User will see the list of Articles with the Online learning tag","id":"10773d72-8650-45c6-8c8d-99ca3e104ee5"}],"id":"ecbcc8cd-f7d7-4e58-bd91-6c0293f7f88f"}}]}}},{"pickle":{"id":"5a902e75-a65a-4eb5-9edd-3d1010659fec","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","name":"Opening the blog by clicking picture","language":"en","steps":[{"text":"User will be on home page","id":"fdc1e3ea-7864-4f7a-8ce5-df45b5a6b1de","astNodeIds":["6b15902f-666d-4f4e-a934-23545262fdca"]},{"text":"User will click on blog section","id":"711bec92-dfc4-4f97-8a9f-d43e1a5f22db","astNodeIds":["6daf3321-2f6c-47d5-a5e8-e649b70713bb"]},{"text":"User will click to picture","id":"0bf2e9a5-143e-4637-a3cc-98492d67cdde","astNodeIds":["9fd68f1a-a8cc-4bd6-8141-78567808826a"]},{"text":"User will see the correct blog","id":"e3cecd55-11fb-43a7-ab7b-fd7c201029c1","astNodeIds":["11aebc5d-7497-4bce-96fd-53368a808ef3"]}],"astNodeIds":["7f000b42-fba1-45eb-a7e3-e487b2188ba8"]}},{"pickle":{"id":"ebff3466-830d-4d8a-8fbd-3021a6f45180","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","name":"Opening page 2 of blogs posted in English Article","language":"en","steps":[{"text":"User will be on home page","id":"43c57a94-cb78-4a4d-9921-a1d9cdf291f6","astNodeIds":["ed07e234-3a88-438c-a72a-f45648332970"]},{"text":"User will click on blog section","id":"019f694b-6933-4f7c-859a-cbe8dcd4f293","astNodeIds":["7dcce66b-a3cc-4606-892a-681cf4c78d55"]},{"text":"User will click to English Article","id":"805465ed-f896-4638-983d-c1402a8f81a2","astNodeIds":["5cf97ded-f952-4bde-9006-2e34d1cdeb97"]},{"text":"User will click to second page","id":"671fc8ba-fa32-43dc-8177-c997f7ca92e9","astNodeIds":["5f7bc60d-3440-4b22-bbbf-6fca55f29902"]},{"text":"User will see the list of English Articles","id":"ddea528e-c4bb-43ed-a042-a992fd96254e","astNodeIds":["127f1734-77f5-42bf-a9cf-041a1456a7f4"]}],"astNodeIds":["cf8a16bd-1696-4f32-a192-920c070602fc"]}},{"pickle":{"id":"a6d91cc0-fbf5-42fa-a48b-2b19abd838f6","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","name":"Opening blog by clicking headline title","language":"en","steps":[{"text":"User will be on home page","id":"880ed692-f196-44f2-abdf-b45316d8609c","astNodeIds":["8cec0a3f-48e9-4877-b995-0e023a5f5b2f"]},{"text":"User will click on blog section","id":"762e3dbb-0d6f-4e24-ace5-f53fa9cd84f2","astNodeIds":["847a3260-c4c6-4652-a3f7-80167320f7e7"]},{"text":"User will click to headline title","id":"de76cbf0-df39-4823-ba81-2d943481b349","astNodeIds":["34587724-ab0d-4f14-9a1d-bb556fd0fa00"]},{"text":"User will see the blog","id":"f6ece460-c2da-43c1-b03b-af4750f834ce","astNodeIds":["44bbc0fe-441d-4eec-90eb-43ffa5546c46"]}],"astNodeIds":["34954288-3d39-4248-b59c-f12ca4182265"]}},{"pickle":{"id":"6c84c28f-3502-4d28-9b30-790cf67f61ba","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","name":"Opening source link in the blog","language":"en","steps":[{"text":"User will be on home page","id":"d45f3d89-a86d-46e4-9505-4fe5f7f27b6d","astNodeIds":["a547d9d9-e796-4227-8efd-b21a08566f26"]},{"text":"User will click on blog section","id":"5aeb22d7-53d7-45c2-b056-b7679fcd24a7","astNodeIds":["b6106056-05a6-4e5d-a749-d9fc84178c01"]},{"text":"User will open the blog","id":"bb4977bd-e126-4ae1-958d-6a48072750b1","astNodeIds":["8115f652-b501-46a0-8d03-0565e379ee1e"]},{"text":"User will click the source link","id":"ae6356d9-1cb2-4ac8-a961-5fca78acd8b0","astNodeIds":["40885f23-a26c-4159-aa91-0ef4003cefd9"]},{"text":"User will see the IELTS destination page","id":"1be67fb8-3c18-4152-bbdf-c7f9352bda72","astNodeIds":["878b4435-b911-4656-ac16-cb8d59fc1154"]}],"astNodeIds":["ddc59bb9-209f-42f0-bc39-7955a4c56075"]}},{"pickle":{"id":"43e31ed7-78f4-4665-b9a3-8a2315f2296c","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Blog.feature","name":"Opening writings with the tag Online learning","language":"en","steps":[{"text":"User will be on home page","id":"747ce96e-6fbb-4c69-94a8-28b1aaa57ffa","astNodeIds":["c83bac1d-2833-4f58-96b1-e1b266ba3cd5"]},{"text":"User will click on blog section","id":"be92b81f-554d-4308-8cf0-dda0d54d1303","astNodeIds":["160675ac-8132-46cb-acda-7df2aeea32c7"]},{"text":"User will click to English Article","id":"40f474ed-6a4f-4d02-9264-0c8db64912d8","astNodeIds":["2f03ff3f-9800-445a-975c-780bc3f6cc5e"]},{"text":"User will click to Online learning tag","id":"a16896d0-83a8-4e0a-aff7-915273b8418b","astNodeIds":["d6e535a1-6c01-4aae-9385-5ed24e860706"]},{"text":"User will see the list of Articles with the Online learning tag","id":"5b43c50c-b1d6-4d0f-99ac-bf6ca9727fa9","astNodeIds":["10773d72-8650-45c6-8c8d-99ca3e104ee5"]}],"astNodeIds":["ecbcc8cd-f7d7-4e58-bd91-6c0293f7f88f"]}},{"source":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","data":"Feature:Course Page Test\r\n  Scenario:Test entering to course page\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    Then User sees the course page\r\n\r\n  Scenario:Test if the 1.enrolment links working\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    And User clicks to first Enrolment Links\r\n    Then User sees if the link opens correct page\r\n\r\n  Scenario:Test if the 2.enrolment links working\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    And User clicks to second Enrolment Links\r\n    Then User sees if the link opens correct page\r\n\r\n  Scenario:Test if the 3.enrolment links working\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    And User clicks to third Enrolment Links\r\n    Then User sees if the link opens correct page\r\n\r\n  Scenario:Test if the 4.enrolment links working\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    And User clicks to fourth Enrolment Links\r\n    Then User sees if the link opens correct page\r\n\r\n  Scenario:Test if the 5.enrolment links working\r\n    Given User goes to main page\r\n    When User clicks to course page\r\n    And User clicks to fifth Enrolment Links\r\n    Then User sees if the link opens correct page\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Course Page Test","children":[{"scenario":{"location":{"line":2,"column":3},"keyword":"Scenario","name":"Test entering to course page","steps":[{"location":{"line":3,"column":5},"keyword":"Given ","text":"User goes to main page","id":"313aa023-d10d-468b-a51a-c7b7c7134260"},{"location":{"line":4,"column":5},"keyword":"When ","text":"User clicks to course page","id":"534a2971-f7bf-49cb-b91f-ea6e19f5e523"},{"location":{"line":5,"column":5},"keyword":"Then ","text":"User sees the course page","id":"867d3136-6fb5-4b1f-965e-eb0e6bbc6c87"}],"id":"8c9aa0a6-aaa4-48fc-ae13-50e57433324e"}},{"scenario":{"location":{"line":7,"column":3},"keyword":"Scenario","name":"Test if the 1.enrolment links working","steps":[{"location":{"line":8,"column":5},"keyword":"Given ","text":"User goes to main page","id":"2ed6c6df-0c94-4163-b4a5-50cdfdc5563e"},{"location":{"line":9,"column":5},"keyword":"When ","text":"User clicks to course page","id":"e8c34ed2-6278-4590-83fa-5155b3a348de"},{"location":{"line":10,"column":5},"keyword":"And ","text":"User clicks to first Enrolment Links","id":"208410cc-eab8-4d17-9638-93aebdf49cd5"},{"location":{"line":11,"column":5},"keyword":"Then ","text":"User sees if the link opens correct page","id":"b04c19db-7eb9-491a-831f-9202ee2aafbb"}],"id":"f3fcac5b-6058-411c-9e9a-8b432aa99d9d"}},{"scenario":{"location":{"line":13,"column":3},"keyword":"Scenario","name":"Test if the 2.enrolment links working","steps":[{"location":{"line":14,"column":5},"keyword":"Given ","text":"User goes to main page","id":"8f7603a8-dc3a-44f0-a8ca-4fb98ea0f0c8"},{"location":{"line":15,"column":5},"keyword":"When ","text":"User clicks to course page","id":"ecef9429-fc8d-47dd-9018-1e858006fbd7"},{"location":{"line":16,"column":5},"keyword":"And ","text":"User clicks to second Enrolment Links","id":"4738c960-b471-423f-9e82-e6ed81c3f67e"},{"location":{"line":17,"column":5},"keyword":"Then ","text":"User sees if the link opens correct page","id":"e8a44b95-b7d2-40ea-aac0-a5626e08aa80"}],"id":"42bc1088-4c36-4341-b070-604f5df9650f"}},{"scenario":{"location":{"line":19,"column":3},"keyword":"Scenario","name":"Test if the 3.enrolment links working","steps":[{"location":{"line":20,"column":5},"keyword":"Given ","text":"User goes to main page","id":"364d9419-2f13-4bcf-9849-1e7fad730c43"},{"location":{"line":21,"column":5},"keyword":"When ","text":"User clicks to course page","id":"921873a2-9fb2-4c59-bf8f-b08bc5270806"},{"location":{"line":22,"column":5},"keyword":"And ","text":"User clicks to third Enrolment Links","id":"924aef1d-0695-4238-b4a3-f89606f28a26"},{"location":{"line":23,"column":5},"keyword":"Then ","text":"User sees if the link opens correct page","id":"8e9811f7-2b1d-4611-aaed-03e815ea5ac4"}],"id":"f853623d-988e-483c-a0e7-8192f055d195"}},{"scenario":{"location":{"line":25,"column":3},"keyword":"Scenario","name":"Test if the 4.enrolment links working","steps":[{"location":{"line":26,"column":5},"keyword":"Given ","text":"User goes to main page","id":"db1ed1fb-d4aa-452b-98fb-edef6e59f37b"},{"location":{"line":27,"column":5},"keyword":"When ","text":"User clicks to course page","id":"634ac947-41ed-4989-a0bf-91e615dde293"},{"location":{"line":28,"column":5},"keyword":"And ","text":"User clicks to fourth Enrolment Links","id":"527763cb-e033-4da5-95a4-a79560ea290b"},{"location":{"line":29,"column":5},"keyword":"Then ","text":"User sees if the link opens correct page","id":"743ebb83-f5f1-4356-9407-334688ff4bfa"}],"id":"77ffe272-9f3a-436b-85e8-7f1f3127d276"}},{"scenario":{"location":{"line":31,"column":3},"keyword":"Scenario","name":"Test if the 5.enrolment links working","steps":[{"location":{"line":32,"column":5},"keyword":"Given ","text":"User goes to main page","id":"2ebd8c54-548e-49a1-8692-01f826f8d668"},{"location":{"line":33,"column":5},"keyword":"When ","text":"User clicks to course page","id":"b80d7a07-12ed-4773-befd-82304fb2df29"},{"location":{"line":34,"column":5},"keyword":"And ","text":"User clicks to fifth Enrolment Links","id":"3d44c743-f47a-4605-af05-97dfd1c3f93a"},{"location":{"line":35,"column":5},"keyword":"Then ","text":"User sees if the link opens correct page","id":"25300112-384e-4ffe-a19b-5eeda43c9594"}],"id":"bc6fa7a4-88c8-43ca-b77f-4c1dbc8f501a"}}]}}},{"pickle":{"id":"f2d7431e-660e-4806-b2da-e6160c9c32b5","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test entering to course page","language":"en","steps":[{"text":"User goes to main page","id":"fab4defd-438e-46e6-a226-873735dff820","astNodeIds":["313aa023-d10d-468b-a51a-c7b7c7134260"]},{"text":"User clicks to course page","id":"f53467d4-88a8-4dbb-b50f-1ad40ecc7e29","astNodeIds":["534a2971-f7bf-49cb-b91f-ea6e19f5e523"]},{"text":"User sees the course page","id":"c7880d6d-b8eb-4b22-a8da-dc4dda5bf069","astNodeIds":["867d3136-6fb5-4b1f-965e-eb0e6bbc6c87"]}],"astNodeIds":["8c9aa0a6-aaa4-48fc-ae13-50e57433324e"]}},{"pickle":{"id":"a216cf6f-d253-48b4-8f5e-31f33b320fb9","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test if the 1.enrolment links working","language":"en","steps":[{"text":"User goes to main page","id":"43d74749-e562-43c8-bef5-bca9ac7073c3","astNodeIds":["2ed6c6df-0c94-4163-b4a5-50cdfdc5563e"]},{"text":"User clicks to course page","id":"c87a764c-5c15-4c22-b6a9-7ce90f7adc4a","astNodeIds":["e8c34ed2-6278-4590-83fa-5155b3a348de"]},{"text":"User clicks to first Enrolment Links","id":"db43d9f4-6e0f-4927-8164-a3326dc74f57","astNodeIds":["208410cc-eab8-4d17-9638-93aebdf49cd5"]},{"text":"User sees if the link opens correct page","id":"75ccd061-0737-4cd9-ab32-1dcd9f793f99","astNodeIds":["b04c19db-7eb9-491a-831f-9202ee2aafbb"]}],"astNodeIds":["f3fcac5b-6058-411c-9e9a-8b432aa99d9d"]}},{"pickle":{"id":"413c63e4-be7d-4a8e-bcfb-c3da4a5ad170","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test if the 2.enrolment links working","language":"en","steps":[{"text":"User goes to main page","id":"bfc6a470-f63c-4692-b0ce-6585a09517c5","astNodeIds":["8f7603a8-dc3a-44f0-a8ca-4fb98ea0f0c8"]},{"text":"User clicks to course page","id":"736c3d81-acc2-4d56-8e82-ccd1fe7da143","astNodeIds":["ecef9429-fc8d-47dd-9018-1e858006fbd7"]},{"text":"User clicks to second Enrolment Links","id":"65f6e9d5-e66d-4214-8c1c-1875782b2212","astNodeIds":["4738c960-b471-423f-9e82-e6ed81c3f67e"]},{"text":"User sees if the link opens correct page","id":"211f1a1d-b37e-42cc-9677-35a0db36097e","astNodeIds":["e8a44b95-b7d2-40ea-aac0-a5626e08aa80"]}],"astNodeIds":["42bc1088-4c36-4341-b070-604f5df9650f"]}},{"pickle":{"id":"90d38f05-e4c7-4131-bdc4-3d0b88a70ac4","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test if the 3.enrolment links working","language":"en","steps":[{"text":"User goes to main page","id":"13f6d2bf-a6be-4ce7-9643-e669e503ea90","astNodeIds":["364d9419-2f13-4bcf-9849-1e7fad730c43"]},{"text":"User clicks to course page","id":"b3968df9-5596-46c0-a536-94b1d65db8da","astNodeIds":["921873a2-9fb2-4c59-bf8f-b08bc5270806"]},{"text":"User clicks to third Enrolment Links","id":"c7620599-68c2-46b5-842e-d821a5cdc796","astNodeIds":["924aef1d-0695-4238-b4a3-f89606f28a26"]},{"text":"User sees if the link opens correct page","id":"4a9776ad-a3c9-4a64-8ea6-28b535e7441a","astNodeIds":["8e9811f7-2b1d-4611-aaed-03e815ea5ac4"]}],"astNodeIds":["f853623d-988e-483c-a0e7-8192f055d195"]}},{"pickle":{"id":"77230ffa-67fd-4136-a4a8-d3c87be11f0b","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test if the 4.enrolment links working","language":"en","steps":[{"text":"User goes to main page","id":"3200e0b9-4d80-49e2-a14e-d9b6dd386a5f","astNodeIds":["db1ed1fb-d4aa-452b-98fb-edef6e59f37b"]},{"text":"User clicks to course page","id":"95cba07c-fbfb-4d48-a6d4-6e55f4ab6fd8","astNodeIds":["634ac947-41ed-4989-a0bf-91e615dde293"]},{"text":"User clicks to fourth Enrolment Links","id":"52ff98e2-f0e9-49d4-961a-9c3c4c77f296","astNodeIds":["527763cb-e033-4da5-95a4-a79560ea290b"]},{"text":"User sees if the link opens correct page","id":"363985dc-4fb3-4bf4-992e-65d807a040b0","astNodeIds":["743ebb83-f5f1-4356-9407-334688ff4bfa"]}],"astNodeIds":["77ffe272-9f3a-436b-85e8-7f1f3127d276"]}},{"pickle":{"id":"f61e3b3c-70f4-48bb-a321-c52fbda8f1ac","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Courses.feature","name":"Test if the 5.enrolment links working","language":"en","steps":[{"text":"User goes to main page","id":"52300ca3-4e71-488b-b455-15565dde21eb","astNodeIds":["2ebd8c54-548e-49a1-8692-01f826f8d668"]},{"text":"User clicks to course page","id":"ac856eb2-7fcc-4f96-9768-07d933df0160","astNodeIds":["b80d7a07-12ed-4773-befd-82304fb2df29"]},{"text":"User clicks to fifth Enrolment Links","id":"ab4299b6-043f-4d1b-9c3f-a0e5546afcb6","astNodeIds":["3d44c743-f47a-4605-af05-97dfd1c3f93a"]},{"text":"User sees if the link opens correct page","id":"3a6352e5-c6af-46e0-9235-8a4c1d018a9d","astNodeIds":["25300112-384e-4ffe-a19b-5eeda43c9594"]}],"astNodeIds":["bc6fa7a4-88c8-43ca-b77f-4c1dbc8f501a"]}},{"source":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","data":"\r\n#Autor: Ebru Kul\r\n\r\nFeature: HomePage Feature\r\n  Scenario:Lesson Duration\r\n    Given User is on the ISpeakBetter HomePage\r\n    When User clicks to Try for Free\r\n    Then Sign in window pops up\r\n\r\n\r\n  Scenario: See the Courses\r\n    Given User is on the ISpeakBetter HomePage\r\n    When User clicks on \u0027See our courses button\r\n    Then User is on the Courses Provided page\r\n\r\n  Scenario: Learnmore Link\r\n    Given User is on the ISpeakBetter HomePage\r\n    When User clicks on LearnMore\r\n    Then User is on the LearnMore page\r\n\r\n  Scenario: Select Duration\r\n    Given User is on the ISpeakBetter HomePage\r\n    When User selects duration for 30 min\r\n    Then User sees it on the duration selection box\r\n\r\n  Scenario: Select Program\r\n    Given User is on the ISpeakBetter HomePage\r\n    When User selects program for Business English\r\n    Then User sees it on the program selection box\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","feature":{"location":{"line":4,"column":1},"language":"en","keyword":"Feature","name":"HomePage Feature","children":[{"scenario":{"location":{"line":5,"column":3},"keyword":"Scenario","name":"Lesson Duration","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"User is on the ISpeakBetter HomePage","id":"3c1f2b52-cf7a-4a8d-9850-691af6cfcb85"},{"location":{"line":7,"column":5},"keyword":"When ","text":"User clicks to Try for Free","id":"1601cd21-b793-41db-b550-ff86269462d3"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"Sign in window pops up","id":"2bf0fd74-8cf6-402b-b5c9-9e63a64e10f1"}],"id":"91341040-a48e-42fc-966b-90da3d5167a4"}},{"scenario":{"location":{"line":11,"column":3},"keyword":"Scenario","name":"See the Courses","steps":[{"location":{"line":12,"column":5},"keyword":"Given ","text":"User is on the ISpeakBetter HomePage","id":"52fdc013-f82d-4b75-a724-d1892cd6abca"},{"location":{"line":13,"column":5},"keyword":"When ","text":"User clicks on \u0027See our courses button","id":"f768b611-06b2-4a7d-8e47-96ff5e9329bf"},{"location":{"line":14,"column":5},"keyword":"Then ","text":"User is on the Courses Provided page","id":"456125f0-56ed-4e4c-bce3-18c787a71eed"}],"id":"df8a838b-05a0-425e-aed9-938c2e475b0b"}},{"scenario":{"location":{"line":16,"column":3},"keyword":"Scenario","name":"Learnmore Link","steps":[{"location":{"line":17,"column":5},"keyword":"Given ","text":"User is on the ISpeakBetter HomePage","id":"e44452fe-83cb-48b2-95f4-b2a76291131e"},{"location":{"line":18,"column":5},"keyword":"When ","text":"User clicks on LearnMore","id":"b5517e64-4f53-4718-8896-470b10d193c6"},{"location":{"line":19,"column":5},"keyword":"Then ","text":"User is on the LearnMore page","id":"d678c130-5969-4167-9867-12c5cfd26272"}],"id":"e94972e5-29c4-4d95-b6bf-23109ef9bf76"}},{"scenario":{"location":{"line":21,"column":3},"keyword":"Scenario","name":"Select Duration","steps":[{"location":{"line":22,"column":5},"keyword":"Given ","text":"User is on the ISpeakBetter HomePage","id":"fb1e03e5-f5c0-4234-aa28-b3a2e2e4969d"},{"location":{"line":23,"column":5},"keyword":"When ","text":"User selects duration for 30 min","id":"af04ad2e-9b7b-4adc-9d06-ab827816aa58"},{"location":{"line":24,"column":5},"keyword":"Then ","text":"User sees it on the duration selection box","id":"6331fd13-30e5-43d7-8647-3ef09790439d"}],"id":"66590faa-56c4-4742-b673-b752f86dd659"}},{"scenario":{"location":{"line":26,"column":3},"keyword":"Scenario","name":"Select Program","steps":[{"location":{"line":27,"column":5},"keyword":"Given ","text":"User is on the ISpeakBetter HomePage","id":"cc59e8c7-250f-4512-82ab-0f959ff1867f"},{"location":{"line":28,"column":5},"keyword":"When ","text":"User selects program for Business English","id":"5dc0c28d-8f36-4752-a4cd-cb008f7d9a13"},{"location":{"line":29,"column":5},"keyword":"Then ","text":"User sees it on the program selection box","id":"af6ee5b6-8da0-43db-b9c2-ab07b59b4eba"}],"id":"c2b7d6a0-40f2-4930-abfd-56329de6e405"}}]},"comments":[{"location":{"line":2,"column":1},"text":"#Autor: Ebru Kul"}]}},{"pickle":{"id":"676ed465-91ed-4ff4-9a78-f1d684b9a6f4","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","name":"Lesson Duration","language":"en","steps":[{"text":"User is on the ISpeakBetter HomePage","id":"f508fd7c-9383-4d8f-9d72-4155611a7a3a","astNodeIds":["3c1f2b52-cf7a-4a8d-9850-691af6cfcb85"]},{"text":"User clicks to Try for Free","id":"05bbfab8-06ca-472d-b024-b40e3d1c2727","astNodeIds":["1601cd21-b793-41db-b550-ff86269462d3"]},{"text":"Sign in window pops up","id":"14334046-341c-42ae-8b70-668baa7017b1","astNodeIds":["2bf0fd74-8cf6-402b-b5c9-9e63a64e10f1"]}],"astNodeIds":["91341040-a48e-42fc-966b-90da3d5167a4"]}},{"pickle":{"id":"ff8c9cd0-2951-4a85-91f6-a39234f73974","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","name":"See the Courses","language":"en","steps":[{"text":"User is on the ISpeakBetter HomePage","id":"264ee82f-b316-4f33-be04-d196abc4202a","astNodeIds":["52fdc013-f82d-4b75-a724-d1892cd6abca"]},{"text":"User clicks on \u0027See our courses button","id":"2b6a7e42-c12b-4a81-8df7-c62e07fb693b","astNodeIds":["f768b611-06b2-4a7d-8e47-96ff5e9329bf"]},{"text":"User is on the Courses Provided page","id":"e03f7802-86ef-4c7b-8ce4-40a1b3dc48e5","astNodeIds":["456125f0-56ed-4e4c-bce3-18c787a71eed"]}],"astNodeIds":["df8a838b-05a0-425e-aed9-938c2e475b0b"]}},{"pickle":{"id":"e8dd4372-6f6c-4dc4-a618-f2da366bdfda","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","name":"Learnmore Link","language":"en","steps":[{"text":"User is on the ISpeakBetter HomePage","id":"bbb51f42-e4f5-4b92-9967-effdeb0512fa","astNodeIds":["e44452fe-83cb-48b2-95f4-b2a76291131e"]},{"text":"User clicks on LearnMore","id":"138e57fc-21d4-4502-9a8c-00133982c969","astNodeIds":["b5517e64-4f53-4718-8896-470b10d193c6"]},{"text":"User is on the LearnMore page","id":"8d8ab4d5-1b56-4783-8840-191159710497","astNodeIds":["d678c130-5969-4167-9867-12c5cfd26272"]}],"astNodeIds":["e94972e5-29c4-4d95-b6bf-23109ef9bf76"]}},{"pickle":{"id":"65c1ed36-41fd-4813-8aa6-ce6441054ae8","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","name":"Select Duration","language":"en","steps":[{"text":"User is on the ISpeakBetter HomePage","id":"dadd9b48-c8b7-4065-bbb9-b5d20bd445f5","astNodeIds":["fb1e03e5-f5c0-4234-aa28-b3a2e2e4969d"]},{"text":"User selects duration for 30 min","id":"d68cd166-ee5d-4f0e-a050-62d526bd68a6","astNodeIds":["af04ad2e-9b7b-4adc-9d06-ab827816aa58"]},{"text":"User sees it on the duration selection box","id":"e90bdcc8-65c2-4299-932a-7e794cadb096","astNodeIds":["6331fd13-30e5-43d7-8647-3ef09790439d"]}],"astNodeIds":["66590faa-56c4-4742-b673-b752f86dd659"]}},{"pickle":{"id":"c254ea51-4db4-446b-a632-e3cb1a8a8052","uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/HomePage.feature","name":"Select Program","language":"en","steps":[{"text":"User is on the ISpeakBetter HomePage","id":"cf115ff0-d20c-400a-8029-461c1a22a961","astNodeIds":["cc59e8c7-250f-4512-82ab-0f959ff1867f"]},{"text":"User selects program for Business English","id":"c533d7bd-923c-4038-9092-e466ac848ec9","astNodeIds":["5dc0c28d-8f36-4752-a4cd-cb008f7d9a13"]},{"text":"User sees it on the program selection box","id":"7b5aa7b3-f3be-4372-bede-589dc4d17075","astNodeIds":["af6ee5b6-8da0-43db-b9c2-ab07b59b4eba"]}],"astNodeIds":["c2b7d6a0-40f2-4930-abfd-56329de6e405"]}},{"source":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Language.feature","data":"Feature:About Feature\r\n\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to English button\r\n    Then Verify that you switch to the English  button\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to Turkish page\r\n    Then Verify that you switch to the Turkish  button\r\n\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to Mongolian page\r\n    Then Verify that you switch to the Mongolian  button\r\n\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to Chinese page\r\n    Then Verify that you switch to the Chinese  button\r\n\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to Russian page\r\n    Then Verify that you switch to the Russian  button\r\n\r\n  Scenario:We are checking Language page links\r\n\r\n    Given User on the About pageL\r\n    When User clicks to Arabic page\r\n    Then Verify that you switch to the Arabic  button\r\n\r\n\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/muham/IdeaProjects/IspeakBetterCucumberProject/src/test/resources/features/Language.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"About Feature","children":[{"scenario":{"location":{"line":4,"column":3},"keyword":"Scenario","name":"We are checking Language page links","steps":[{"location":{"line":6,"column":5},"keyword":"Given ","text":"User on the About pageL","id":"21f334a0-24d4-4eb3-87e6-08a57aab9782"},{"location":{"line":7,"column":5},"keyword":"When ","text":"User clicks to English button","id":"d2f8a459-df12-43d0-8294-2b3565aac500"},{"location":{"line":8,"column":5},"keyword":"Then ","text":"Verify that you switch to the English  button","id":"6b3a3172-27f5-40ed-96f9-391aa1a43946"}],"id":"ac639799-3201-4ebb-8b44-2ed5f6d8e419"}},{"scenario":{"location":{"line":10,"column":3},"keyword":"Scenario","name":"We are checking Language page links","steps":[{"location":{"line":12,"column":5},"keyword":"Given ","text":"User on the About pageL","id":"1dc2ea57-4ae2-49cc-ac77-9812a0dc8763"},{"location":{"line":13,"column":5},"keyword":"When ","text":"User clicks to Turkish page","id":"b1c8613e-8779-4d5e-aaae-dd1e4dd727e2"},{"location":{"line":14,"column":5},"keyword":"Then ","text":"Verify that you switch to the Turkish  button","id":"1cbe510b-1f92-4b7c-848b-e58368b1a880"}],"id":"2554d0cb-30e9-40e4-83ea-1cab500ddd35"}},{"scenario":{"location":{"line":17,"column":3},"keyword":"Scenario","name":"We are checking Language page links","steps":[{"location":{"line":19,"column":5},"keyword":"Given ","text":"User on the About pageL","id":"77ba815d-1f39-451e-88eb-05910b22e05d"},{"location":{"line":20,"column":5},"keyword":"When ","text":"User clicks to Mongolian page","id":"eea6c610-00b0-42e5-8d36-a899ac904659"},{"location":{"line":21,"column":5},"keyword":"Then ","text":"Verify that you switch to the Mongolian  button","id":"da65c422-04ae-4bfb-8069-e7e6eb63bd52"}],"id":"dbc052f0-9fe2-4513-8425-b1ef68097719"}},{"scenario":{"location":{"line":24,"column":3},"keyword":"Scenario","name":"We are checking Language page links","steps":[{"location":{"line":26,"column":5},"keyword":"Given ","text":"User on the About pageL","id":"c8edcb4f-c626-4f72-b4fa-fb414bdcc5ee"},{"location":{"line":27,"column":5},"keyword":"When ","text":"User clicks to Chinese page","id":"0db16de7-e7d2-434e-b8b4-59f66a826cbc"},{"location":{"line":28,"column":5},"keyword":"Then ","text":"Verify that you switch to the Chinese  button","id":"0c98b83a-ae06-41b8-8a27-c53b9c59a402"}],"id":"1bfce969-d19b-42b7-a2a0-9f3e62e6fdf3"}},{"scenario":{"location":{"line":31,"column":3},"keyword":"Scenario","name":"We are checking Language page links","steps":[{"location":{"line":33,"column":5},"keyword":"Given ","text":"Use

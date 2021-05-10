@@ -1,0 +1,7 @@
+base\BasePage.class
+base\PageManager.class
+utils\Constants.class
+pages\CoursesPage.class
+pages\AboutPage.class
+utils\HelperMethods.class
+base\ConfigReader.class
